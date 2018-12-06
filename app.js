@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/:id', (req, res) => {
-    queries.getMovieById(req.params.id).then(movie => res.status(200).send(student))
+    queries.getMovieById(req.params.id).then(movie => res.status(200).send(movie))
 })
 
 app.post('/', (req, res) => {
@@ -23,7 +23,7 @@ app.post('/', (req, res) => {
 })
 
 app.delete('/:id', (req, res) => {
-    queries.deleteMovie(id).then(res.status(204))
+    queries.deleteMovie(req.params.id).then(res.status(204))
 })
 
 app.use((req, res, next) => {

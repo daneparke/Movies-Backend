@@ -7,7 +7,7 @@ module.exports = {
         return db('movies').where({ id: id }).first()
     },
     createMovie(newMovie) {
-        return db('mobies').insert(newMovie).returning('*')
+        return db('movies').insert(newMovie).returning('*')
     },
     deleteMovie(id) {
         return db('movies').where({ id: id }).delete()
