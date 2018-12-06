@@ -10,20 +10,24 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 
-app.get('/', (req, res) => {
+app.get('/movies', (req, res) => {
     queries.getAllMovies().then(movies => res.status(200).send({ movies }))
 })
 
-app.get('/:id', (req, res) => {
+app.get('/movies/:id', (req, res) => {
     queries.getMovieById(req.params.id).then(movie => res.status(200).send(movie))
 })
 
-app.post('/', (req, res) => {
+app.post('/movies', (req, res) => {
     queries.createMovie(req.body).then(newMovie => res.status(201).send(newMovie))
 })
 
-app.delete('/:id', (req, res) => {
+app.delete('/movies/:id', (req, res) => {
     queries.deleteMovie(req.params.id).then(res.status(204))
+})
+
+app.put('/movies/:id', (req, res) => {
+    queries.updateMovie(req.params.id, req.body).then(updatedMovie => res.json(updatedMovie[0]))
 })
 
 app.use((req, res, next) => {
