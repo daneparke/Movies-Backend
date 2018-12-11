@@ -23,11 +23,11 @@ app.post('/movies', (req, res) => {
 })
 
 app.delete('/movies/:id', (req, res) => {
-    queries.deleteMovie(req.params.id).then(res.status(204))
+    queries.deleteMovie(req.params.id).then(res.status(204).send())
 })
 
 app.put('/movies/:id', (req, res) => {
-    queries.updateMovie(req.params.id, req.body).then(updatedMovie => res.json(updatedMovie[0]))
+    queries.updateMovie(req.params.id, req.body).then(updatedMovie => res.json(updatedMovie))
 })
 
 app.use((req, res, next) => {
