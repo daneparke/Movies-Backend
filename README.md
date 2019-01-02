@@ -1,7 +1,7 @@
 ## Galvanize OMDB Back-End
-This is database I created to be used for my full stack OMDB application, that feeds information to my [frontend](https://github.com/daneparke/Movies-Frontend). 
-This backend contains one table that has a list of movies with their title, director, year, rating, poster url, and an id.
-In this database you can create, edit, and delete movies from the collection.
+This is a database I created to be used for my full stack OMDB application, that feeds information to my [frontend](https://github.com/daneparke/Movies-Frontend). 
+* This backend contains one table that has a list of movies with their title, director, year, rating, poster url, and an id.
+* In this database you can create, edit, and delete movies from the collection.
 
 ## Getting Started
 
